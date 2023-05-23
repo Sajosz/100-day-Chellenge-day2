@@ -1,0 +1,103 @@
+.conteiner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background: rgb(81, 150, 103);
+}
+
+.linebox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 20%;
+    height: 10vh;
+}
+
+.linia1,
+.linia2,
+.linia3 {
+    border-radius: 4px;
+    background: white;
+    width: 14vh;
+    height: 10px;
+    box-shadow: 0 0 40px 0 black;
+    transition: all 0.8s;
+}
+
+.linebox:hover .linia2 {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.linebox:hover .linia1 {
+    animation: bar1 1s ease-in-out forwards;
+}
+
+@keyframes bar1 {
+    50% {
+        transform: translateY(25px);
+    }
+    100% {
+        transform: translateY(20px) rotateZ(45deg);
+    }
+}
+
+.linebox:hover .linia3 {
+    animation: bar3 1s ease-in-out forwards;
+}
+
+@keyframes bar3 {
+    50% {
+        transform: translateY(-35px);
+    }
+    100% {
+        transform: translateY(-40px) rotateZ(135deg);
+    }
+}
+
+.linebox:active .linia1 {
+    animation: bar1rev 1s ease-in-out;
+}
+
+@keyframes bar1rev {
+    0% {
+        transform: translateY(25px) rotateZ(45deg);
+    }
+    50% {
+        transform: translateY(25px) rotateZ(0);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
+.linebox:active .linia3 {
+    animation: bar3rev 1s ease-in-out;
+}
+
+@keyframes bar3rev {
+    0% {
+        transform: translateY(-35px) rotateZ(135deg);
+    }
+    50% {
+        transform: translateY(-35px) rotateZ(0);
+    }
+    100% {
+        transform: translatey(6px);
+    }
+}
+
+.linebox:active .linia2 {
+    transition-delay: 0.8s;
+    transform: scale(1);
+    opacity: 1;
+}
